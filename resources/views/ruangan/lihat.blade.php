@@ -5,7 +5,7 @@
 		<strong><a href="{{url('ruangan')}}"><i style="color:#8a6d3b" class="fa text-default fa-chevron-left"></i></a>Detail Data ruangan</strong></div>
 		<table class="table">
 			<tr>
-				<td>Nama</td>
+				<td>Nama Ruangan</td>
 				<td>:</td>
 				<td>{{$ruangan->title}}</td>
 			</tr>

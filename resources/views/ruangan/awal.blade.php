@@ -2,9 +2,9 @@
 @section('container')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>Seluruh Data ruangan</strong>
+		<strong>Seluruh Data Ruangan</strong>
 		<a href="{{url('ruangan/tambah')}}" class="btn btn-xs btn-primary pull-right">
-			<i class="fa fa-plus"></i>ruangan
+			<i class="fa fa-plus"></i> Ruangan
 		</a>
 		<div class="clearfix"></div>
 	</div>
@@ -12,7 +12,7 @@
 		<thead>
 			<tr>
 				<th>No.</th>
-				<th>Nama</th>
+				<th>Nama Ruangan</th>
 				<th>Aksi</th>
 			</tr>
 		</thead>
@@ -21,7 +21,7 @@
 			@foreach($data as $ruangan)
 			<tr>
 				<td>{{$x++}}</td>
-				<td>{{$ruangan->title or 'Ruangan kosong'}}</td>
+				<td>{{$ruangan->title or 'Nama Ruangan kosong'}}</td>
 				<td>
 					<div class="btn-group" role="group">
 						<a href="{{url('ruangan/edit/'.$ruangan->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top" title="Ubah"><i class="fa fa-pencil"></i></a>

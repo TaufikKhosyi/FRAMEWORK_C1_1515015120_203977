@@ -2,9 +2,9 @@
 @section('container')
 <div class="panel panel-default">
 	<div class="panel-heading">
-		<strong>Seluruh Data matakuliah</strong>
+		<strong>Seluruh Data Matakuliah</strong>
 		<a href="{{url('matakuliah/tambah')}}" class="btn btn-xs btn-primary pull-right">
-			<i class="fa fa-plus"></i>matakuliah
+			<i class="fa fa-plus"></i> Matakuliah
 		</a>
 		<div class="clearfix"></div>
 	</div>
@@ -12,7 +12,7 @@
 		<thead>
 			<tr>
 				<th>No.</th>
-				<th>Nama</th>
+				<th>Nama Matakuliah</th>
 				<th>Keterangan</th>
 				<th>Aksi</th>
 			</tr>
@@ -22,7 +22,7 @@
 			@foreach($data as $matakuliah)
 			<tr>
 				<td>{{$x++}}</td>
-				<td>{{$matakuliah->title or 'nama kosong'}}</td>
+				<td>{{$matakuliah->title or 'Nama MataKuliah kosong'}}</td>
 				<td>{{$matakuliah->keterangan or 'keterangan kosong'}}</td>
 				<td>
 					<div class="btn-group" role="group">

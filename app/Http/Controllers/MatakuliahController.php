@@ -29,7 +29,7 @@ class MatakuliahController extends Controller
 	}
   public function edit($id)
     {
-      $ruangan = Ruangan::find($id);
+      $matakuliah = Matakuliah::find($id);
       return view('matakuliah.edit')->with(array('matakuliah'=>$matakuliah));
     }
     public function lihat($id)

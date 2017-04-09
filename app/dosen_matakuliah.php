@@ -30,4 +30,11 @@ class dosen_matakuliah extends Model
     {
     	return $this-hasMany(jadwal_matakuliah::class,'dosen_matakuliah_id');
     }
+    public function listDosenDanMatakuliah(){
+        $out = [];
+        foreach ($this->all() as $dsnMtk) {
+            $out[$dsnMtk->id] = "{$dsnMtk->dosen->nama} (matakuliah{$dsnMtk->matakuliah->title})";
+        }
+        return $out;
+    }
 }

@@ -11,6 +11,7 @@ class mahasiswa extends Model
 {
     protected $table = 'mahasiswa';
     protected $guarded = ['id'];
+    protected $fillable = ['nama','nim','alamat','pengguna_id'];
 
     //eloquent akan mencoba untuk mencocokkan pengguna_id dari model mahasiswa ke id model pengguna, eloquent menentukan 
     //default nama foreign key dengan memerkisa nama fungsi relasi dan suffixing nama fungsi dengan _id
@@ -18,10 +19,22 @@ class mahasiswa extends Model
     {
     	return $this->belongsTo(pengguna::class);
     }
-
     //eloquent akan menganggap foreign key pada jadwal_matakuliah adalah mahasiswa_id 
+    
+    public function getUsernameAttribute(){
+        return $this->pengguna->username;
+    }
+    public function listMahasiswaDanNim(){
+        $out = [];
+        foreach ($this->all() as $mhs) {
+            $out[$mhs->id] = "{$mhs->nama} ({$mhs->nim})";
+        }
+        return $out;
+    }
+    
     public function jadwalmatakuliah()
     {
-    	return $this->hasMany(jadwalmatakuliah::class,'mahasiswa_id');
+        return $this->hasMany(jadwal_matakuliah::class,'mahasiswa_id');
     }
+
 }

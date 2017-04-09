@@ -14,14 +14,12 @@
 				<th>No.</th>
 				<th>Nama</th>
 				<th>NIM</th>
-				<th>Alamat</th>
-				<th>ID Pengguna</th>
 				<th>Aksi</th>
 			</tr>
 			</thead>
 			<tbody>
-				<?php $x=1; ?>
-				@foreach ($data as $mahasiswa)
+				<?php $x=1;?>
+				@foreach ($semuaMahasiswa as $mahasiswa)
 				<tr>
 					<td>{{$x++}}</td>
 					<td>{{$mahasiswa->nama or 'Nama kosong'}}</td>

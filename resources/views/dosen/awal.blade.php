@@ -14,20 +14,16 @@
 				<th>No.</th>
 				<th>Nama</th>
 				<th>NIP</th>
-				<th>Alamat</th>
-				<th>ID Pengguna</th>
 				<th>Aksi</th>
 			</tr>
 			</thead>
 			<tbody>
 				<?php $x=1; ?>
-				@foreach ($data as $dosen)
+				@foreach ($semuaDosen as $dosen)
 				<tr>
 					<td>{{$x++}}</td>
 					<td>{{$dosen->nama or 'Nama kosong'}}</td>
 					<td>{{$dosen->nip or 'NIP kosong'}}</td>
-					<td>{{$dosen->alamat or 'Alamat kosong'}}</td>
-					<td>{{$dosen->pengguna_id or 'ID Pengguna kosong'}}</td>
 					<td>
 						<div class="btn-group" role="group">
 							<a href="{{url('dosen/edit/'.$dosen->id)}}" class="btn btn-warning btn-xs" data-toggle="tooltip" data-placement="top"
